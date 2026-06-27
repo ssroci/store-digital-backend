@@ -1,8 +1,8 @@
 const Product = require('../models/Product');
 
 const ProductRepository = {
-  findAll: (filter = {}) =>
-    Product.find({ isActive: true, ...filter })
+ findAll: (filter = {}) =>
+    Product.find({ ...filter })
       .populate('category', 'name slug')
       .populate('createdBy', 'name email')
       .sort({ createdAt: -1 }),
