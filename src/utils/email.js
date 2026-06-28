@@ -11,9 +11,9 @@ const transporter = nodemailer.createTransport({
 });
 
 /**
- * Envía un email de verificación de cuenta al usuario recién registrado.
- * @param {string} to      - Email destino
- * @param {string} token   - Token de verificación UUID
+
+ * @param {string} to      
+ * @param {string} token  
  */
 const sendVerificationEmail = async (to, token) => {
   const verifyUrl = `${process.env.FRONTEND_URL}/verify-email?token=${token}`;

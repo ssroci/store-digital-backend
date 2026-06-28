@@ -1,6 +1,6 @@
 # Digital Store — Backend
 
-API REST para una tienda de productos digitales. Desarrollada con Node.js + Express + MongoDB.
+API REST para una tienda de indumentaria deportiva. Desarrollada con Node.js + Express + MongoDB.
 
 ## Stack
 
@@ -28,18 +28,13 @@ src/
 ## Instalación
 
 ```bash
-# 1. Clonar el repo
 git clone <repo-url>
 cd digital-store-backend
 
-# 2. Instalar dependencias
 npm install
 
-# 3. Configurar variables de entorno
 cp .env.example .env
-# Editar .env con tus credenciales
 
-# 4. Iniciar en modo desarrollo
 npm run dev
 ```
 
@@ -102,15 +97,15 @@ Respuesta:
 |---|---|---|---|
 | GET | `/api/categories` | Listar todas las categorías | No |
 | GET | `/api/categories/:id` | Obtener categoría por ID | No |
-| POST | `/api/categories` | Crear categoría | ✅ JWT + Admin |
-| PUT | `/api/categories/:id` | Actualizar categoría | ✅ JWT + Admin |
-| DELETE | `/api/categories/:id` | Eliminar categoría | ✅ JWT + Admin |
+| POST | `/api/categories` | Crear categoría | ✅ JWT |
+| PUT | `/api/categories/:id` | Actualizar categoría | ✅ JWT |
+| DELETE | `/api/categories/:id` | Eliminar categoría | ✅ JWT |
 
 #### POST /api/categories
 ```json
 {
-  "name": "Cursos",
-  "description": "Cursos y tutoriales en video"
+  "name": "Running",
+  "description": "Indumentaria y accesorios para running"
 }
 ```
 
@@ -129,13 +124,11 @@ Respuesta:
 #### POST /api/products
 ```json
 {
-  "title": "Curso de React desde cero",
-  "description": "Aprende React con proyectos reales",
-  "price": 29.99,
-  "fileUrl": "https://ejemplo.com/descarga/react-curso",
-  "previewImageUrl": "https://ejemplo.com/img/react.jpg",
-  "category": "648a1f...",
-  "tags": ["react", "javascript", "frontend"]
+  "title": "Zapatillas Running Pro",
+  "description": "Zapatillas livianas para running de alto rendimiento",
+  "price": 85000,
+  "fileUrl": "https://ejemplo.com/img/zapatillas.jpg",
+  "category": "648a1f..."
 }
 ```
 
@@ -144,8 +137,8 @@ Respuesta:
 ## Credenciales de prueba
 
 ```
-Email: test@digitalstore.com
-Password: test1234
+Email: editordigitalro@gmail.com
+Password: bhyhncplsorhjejg
 ```
 *(cuenta con email ya verificado)*
 
@@ -153,5 +146,7 @@ Password: test1234
 
 ## Despliegue
 
-El backend puede desplegarse en [Railway](https://railway.app), [Render](https://render.com) o [Fly.io](https://fly.io).
-Recordá configurar las variables de entorno en el panel de la plataforma.
+El backend está desplegado en [Vercel](https://vercel.com).  
+URL pública: `https://store-digital-backend.vercel.app`
+
+Recordá configurar las variables de entorno en el panel de Vercel.

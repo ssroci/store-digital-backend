@@ -7,16 +7,10 @@ const { authenticate } = require('../middleware/auth.middleware');
 
 const router = Router();
 
-/**
- * GET /api/products
- * Público (opcional ?category=<id>)
- */
+
 router.get('/', ProductController.getAll);
 
-/**
- * GET /api/products/:id
- * Público + validación de MongoID
- */
+
 router.get(
   '/:id',
   [
@@ -26,10 +20,7 @@ router.get(
   ProductController.getById
 );
 
-/**
- * POST /api/products
- * Requiere JWT
- */
+
 router.post(
   '/',
   authenticate,
@@ -44,10 +35,7 @@ router.post(
   ProductController.create
 );
 
-/**
- * PUT /api/products/:id
- * Requiere JWT + validaciones opcionales
- */
+
 router.put(
   '/:id',
   authenticate,
@@ -64,10 +52,7 @@ router.put(
   ProductController.update
 );
 
-/**
- * DELETE /api/products/:id
- * Requiere JWT + validación ID
- */
+
 router.delete(
   '/:id',
   authenticate,

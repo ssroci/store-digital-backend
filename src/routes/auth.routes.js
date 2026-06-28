@@ -6,7 +6,7 @@ const { authenticate } = require('../middleware/auth.middleware');
 
 const router = Router();
 
-// POST /api/auth/register
+
 router.post(
   '/register',
   [
@@ -18,10 +18,10 @@ router.post(
   AuthController.register
 );
 
-// GET /api/auth/verify-email?token=xxx
+
 router.get('/verify-email', AuthController.verifyEmail);
 
-// POST /api/auth/login
+
 router.post(
   '/login',
   [
@@ -32,7 +32,7 @@ router.post(
   AuthController.login
 );
 
-// GET /api/auth/profile  (requiere JWT)
+
 router.get('/profile', authenticate, AuthController.getProfile);
 
 module.exports = router;
