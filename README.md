@@ -132,7 +132,6 @@ Respuesta:
 }
 ```
 
----
 
 ## Credenciales de prueba
 
@@ -142,11 +141,10 @@ Password: bhyhncplsorhjejg
 ```
 *(cuenta con email ya verificado)*
 
----
+
 
 ## Despliegue
 
 El backend está desplegado en [Vercel](https://vercel.com).  
 URL pública: `https://store-digital-backend.vercel.app`
 
-Recordá configurar las variables de entorno en el panel de Vercel.
