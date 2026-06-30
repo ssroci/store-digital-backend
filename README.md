@@ -1,8 +1,8 @@
-# Digital Store — Backend
+Digital Store — Backend
 
 API REST para una tienda de indumentaria deportiva. Desarrollada con Node.js + Express + MongoDB.
 
-## Stack
+ Stack
 
 - **Node.js + Express**
 - **MongoDB** con Mongoose
@@ -11,7 +11,7 @@ API REST para una tienda de indumentaria deportiva. Desarrollada con Node.js + E
 - **Nodemailer** para envío de emails
 - **express-validator** para validación de inputs
 
-## Estructura del proyecto
+ Estructura del proyecto
 
 ```
 src/
@@ -25,7 +25,7 @@ src/
  └─ utils/          # jwt, email
 ```
 
-## Instalación
+Instalación
 
 ```bash
 git clone <repo-url>
@@ -38,7 +38,7 @@ cp .env.example .env
 npm run dev
 ```
 
-## Variables de entorno
+ Variables de entorno
 
 | Variable | Descripción |
 |---|---|
@@ -54,9 +54,9 @@ npm run dev
 
 ---
 
-## Endpoints de la API
+ Endpoints de la API
 
-### Auth
+Auth
 
 | Método | Endpoint | Descripción | Auth requerida |
 |---|---|---|---|
@@ -65,7 +65,7 @@ npm run dev
 | POST | `/api/auth/login` | Login — devuelve JWT | No |
 | GET | `/api/auth/profile` | Obtener perfil del usuario autenticado | ✅ JWT |
 
-#### POST /api/auth/register
+POST /api/auth/register
 ```json
 {
   "name": "Juan Pérez",
@@ -74,7 +74,7 @@ npm run dev
 }
 ```
 
-#### POST /api/auth/login
+POST /api/auth/login
 ```json
 {
   "email": "juan@example.com",

@@ -5,9 +5,7 @@ const { generateToken } = require('../utils/jwt');
 const { sendVerificationEmail } = require('../utils/email');
 
 const AuthService = {
-  /**
-   * Registra un nuevo usuario, hashea su contraseña y envía email de verificación.
-   */
+  
   register: async ({ name, email, password }) => {
     const existing = await UserRepository.findByEmail(email);
     if (existing) {
@@ -31,9 +29,7 @@ const AuthService = {
     return { message: 'Registro exitoso. Revisá tu email para verificar tu cuenta.' };
   },
 
-  /**
-   * Verifica la cuenta del usuario usando el token del email.
-   */
+  
   verifyEmail: async (token) => {
     const user = await UserRepository.findByVerificationToken(token);
     if (!user) {
@@ -49,9 +45,7 @@ const AuthService = {
     return { message: 'Cuenta verificada correctamente. Ya podés iniciar sesión.' };
   },
 
-  /**
-   * Login: valida credenciales y devuelve JWT.
-   */
+  
   login: async ({ email, password }) => {
     const user = await UserRepository.findByEmail(email);
     if (!user) {
@@ -86,9 +80,7 @@ const AuthService = {
     };
   },
 
-  /**
-   * Devuelve el perfil del usuario autenticado (sin la contraseña).
-   */
+  
   getProfile: async (userId) => {
     const user = await UserRepository.findById(userId).select('-password -verificationToken');
     return user;

@@ -19,7 +19,7 @@ const categorySchema = new mongoose.Schema({
   },
 }, { timestamps: true });
 
-// Genera el slug automáticamente desde el nombre
+
 categorySchema.pre('save', function (next) {
   if (this.isModified('name')) {
     this.slug = this.name

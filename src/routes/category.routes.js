@@ -6,13 +6,13 @@ const { authenticate, requireAdmin } = require('../middleware/auth.middleware');
 
 const router = Router();
 
-// GET /api/categories  — público
+
 router.get('/', CategoryController.getAll);
 
-// GET /api/categories/:id  — público
+
 router.get('/:id', CategoryController.getById);
 
-// POST /api/categories  — requiere auth (admin)
+
 router.post(
   '/',
   authenticate,
@@ -24,7 +24,7 @@ router.post(
   CategoryController.create
 );
 
-// PUT /api/categories/:id  — requiere auth (admin)
+
 router.put(
   '/:id',
   authenticate,
@@ -32,7 +32,7 @@ router.put(
   CategoryController.update
 );
 
-// DELETE /api/categories/:id  — requiere auth (admin)
+
 router.delete('/:id', authenticate, requireAdmin, CategoryController.delete);
 
 module.exports = router;

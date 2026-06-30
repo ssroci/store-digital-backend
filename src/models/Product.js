@@ -30,7 +30,7 @@ const productSchema = new mongoose.Schema({
   },
 
   sizes: {
-    type: [String], // 👈 TALLES (ropa deportiva)
+    type: [String], 
     default: []
   },
 

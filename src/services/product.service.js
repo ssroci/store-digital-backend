@@ -3,12 +3,12 @@ const CategoryRepository = require('../repositories/category.repository');
 
 const ProductService = {
   getAll: async (categorySlug) => {
-    // Si viene categoría por URL (?category=running)
+
     if (categorySlug) {
       const category = await CategoryRepository.findBySlug(categorySlug);
 
       if (!category) {
-        return []; // o podés lanzar error si querés
+        return []; 
       }
 
       return ProductRepository.findByCategory(category._id);
