@@ -29,7 +29,7 @@ Instalación
 
 ```bash
 git clone <repo-url>
-cd digital-store-backend
+cd store-digital-backend
 
 npm install
 
